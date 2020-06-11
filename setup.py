@@ -24,6 +24,7 @@ setup(
     name='aioarangodb',
     version=version,
     description='AsyncIO ArangoDB driver',
+    long_description=README,
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

@@ -86,13 +86,13 @@ Here is a simple usage example:
     sys_db = await client.db('_system', username='root', password='passwd')
 
     # Create a new database named "test".
-    await sys_db.create_database('test')
+    await await sys_db.create_database('test')
 
     # Connect to "test" database as root user.
     db = await client.db('test', username='root', password='passwd')
 
     # Create a new collection named "students".
-    students = db.create_collection('students')
+    students = await db.create_collection('students')
 
     # Add a hash index to the collection.
     await students.add_hash_index(fields=['name'], unique=True)
