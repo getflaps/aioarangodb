@@ -1,0 +1,7 @@
+pytest-cov
+python-coveralls
+mock
+pytest
+pytest-asyncio
+pytest_docker_fixtures
+requests
