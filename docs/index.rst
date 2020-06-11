@@ -1,6 +1,3 @@
-.. image:: /static/logo.png
-
-|
 
 Welcome to the documentation for **aioarangodb**, a Python driver for ArangoDB_ with AsyncIO.
 
