@@ -76,14 +76,14 @@ Here is an example showing how edge definitions are managed:
     db = await client.db('test', username='root', password='passwd')
 
     # Get the API wrapper for graph "school".
-    if db.has_graph('school'):
+    if await db.has_graph('school'):
         school = db.graph('school')
     else:
         school = await db.create_graph('school')
 
     # Create an edge definition named "teach". This creates any missing
     # collections and returns an API wrapper for "teach" edge collection.
-    if not school.has_edge_definition('teach'):
+    if not await school.has_edge_definition('teach'):
         teach = await school.create_edge_definition(
             edge_collection='teach',
             from_vertex_collections=['teachers'],
@@ -135,7 +135,7 @@ additional safeguards:
 
     # Create a new vertex collection named "teachers" if it does not exist.
     # This returns an API wrapper for "teachers" vertex collection.
-    if school.has_vertex_collection('teachers'):
+    if await school.has_vertex_collection('teachers'):
         teachers = school.vertex_collection('teachers')
     else:
         teachers = await school.create_vertex_collection('teachers')
@@ -170,7 +170,7 @@ IDs instead of keys where applicable.
 
     # Create a new vertex collection named "lectures" if it does not exist.
     # This returns an API wrapper for "lectures" vertex collection.
-    if school.has_vertex_collection('lectures'):
+    if await school.has_vertex_collection('lectures'):
         school.vertex_collection('lectures')
     else:
         await school.create_vertex_collection('lectures')
@@ -206,13 +206,13 @@ wrappers provides additional safeguards:
     db = await client.db('test', username='root', password='passwd')
     school = db.graph('school')
 
-    if school.has_vertex_collection('lectures'):
+    if await school.has_vertex_collection('lectures'):
         school.vertex_collection('lectures')
     else:
         await school.create_vertex_collection('lectures')
     school.insert_vertex('lectures', {'_key': 'CSC101'})
 
-    if school.has_vertex_collection('teachers'):
+    if await school.has_vertex_collection('teachers'):
         school.vertex_collection('teachers')
     else:
         await school.create_vertex_collection('teachers')
@@ -330,12 +330,12 @@ over edges and vertices using various algorithms.
     db = client.db('test', username='root', password='passwd')
     school = db.graph('school')
 
-    if school.has_vertex_collection('lectures'):
+    if await school.has_vertex_collection('lectures'):
         school.vertex_collection('lectures')
     else:
         await school.create_vertex_collection('lectures')
 
-    if school.has_vertex_collection('teachers'):
+    if await school.has_vertex_collection('teachers'):
         school.vertex_collection('teachers')
     else:
         await school.create_vertex_collection('teachers')
