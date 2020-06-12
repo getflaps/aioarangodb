@@ -48,7 +48,7 @@ def pytest_configure(config):
 def arango():
     if os.environ.get('TRAVIS', 'false') == 'true':
         host, port = arango_image.run()
-    yield
+    yield host, port
     if os.environ.get('TRAVIS', 'false') == 'true':
         arango_image.stop()
 
