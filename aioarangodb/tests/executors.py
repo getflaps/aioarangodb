@@ -1,6 +1,6 @@
 import time
 
-from stashify_graph.arango.executor import (
+from aioarangodb.executor import (
     AsyncExecutor,
     BatchExecutor,
     TransactionExecutor,

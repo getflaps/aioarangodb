@@ -1,7 +1,8 @@
 0.1.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Splitting fixture so it can be reused on subpackages
+  [bloodbare]
 
 
 0.1.1 (2020-06-12)
